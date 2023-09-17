@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { getAnimals } from '../sanity/queries/getAnimals';
 import React from 'react';
 import type { Animal } from "@/types";
+import Navigation from '@/components/NavBar';
 
 
 
@@ -16,6 +17,7 @@ export default async function Home() {
 
   return (
     <main>
+      <Navigation />
       <h1>Animals</h1>
       {data.map((animal: Animal) => (
         <div key={animal._id}>
