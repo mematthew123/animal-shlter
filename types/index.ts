@@ -12,16 +12,7 @@ export type Animal = {
     alt: string;
     image: string;
   };
-  body: {
-    _key: string;
-    _type: string;
-    children: {
-      _key: string;
-      _type: string;
-      marks: any[];
-      text: string;
-    }[];
-    markDefs: any[];
-    style: string;
-  }[];
+  body: PortableTextBlock[];
+  dogTemperament?: string[];
+  catTemperament?: string[];
 };

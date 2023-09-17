@@ -12,7 +12,8 @@ export async function getCats() {
         alt,
         "image": asset->url
       },
-      body
+      body,
+      catTemperament,
     }`
   );
 }

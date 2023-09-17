@@ -12,7 +12,8 @@ export async function getDogs() {
         alt,
         "image": asset->url
       },
-      body
+      body,
+      dogTemperament, 
     }`
   );
 }
