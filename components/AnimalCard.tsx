@@ -12,7 +12,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({ image, name, description
     console.log(temperament);
     return (
         <div className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300">
-            {image && <img src={image} alt={name} className="w-full h-48 object-contain rounded-t-lg" />}
+            {image && <img src={image} alt={name} className="w-full h-64 object-contain aspect-auto rounded-t-lg" />}
             <div className="p-2">
                 <h2 className="text-xl font-semibold">{name}</h2>
                 <p className="text-gray-600 mt-2 line-clamp-1">{description}</p>
