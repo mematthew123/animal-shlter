@@ -17,3 +17,26 @@ export async function getDogs() {
     }`
   );
 }
+
+
+
+export async function getDog(slug: any) {
+  return client.fetch(
+    groq`*[_type == "Animals" && slug.current == "${slug}"][0]{
+      _id,
+      name,
+      type,
+      slug{
+        current,
+        _type
+
+      },
+      mainImage {
+        alt,
+        "image": asset->url
+      },
+      body,
+      dogTemperament, 
+    }`
+  );
+}
