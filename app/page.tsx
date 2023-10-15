@@ -1,3 +1,4 @@
+import CallToAction from '@/components/CallToAction';
 import Faqs from '@/components/Faqs';
 import Featured from '@/components/Featured';
 import Navigation from '@/components/NavBar';
@@ -105,6 +106,7 @@ export default function Home() {
       {/* three columns */}
       <Columns />
       <Faqs />
+      <CallToAction />
       <Featured />
     </>
   );
