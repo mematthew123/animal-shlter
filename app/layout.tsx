@@ -18,13 +18,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en'>
-      <div className='flex flex-col min-h-screen mx-auto p-4'>
-        <body className={inter.className}>
-          <Navigation />
-          {children}
-          <Footer />
-        </body>
-      </div>
+      <body className='px-6 lg:px-20'>
+        <Navigation />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

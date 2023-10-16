@@ -35,9 +35,9 @@ const Navigation = () => {
   return (
     <div
       style={{ backgroundColor: `${color}` }}
-      className='fixed left-0 top-0 w-full z-10 ease-in duration-300'
+      className='fixed left-0 top-0 px-10 w-full z-10 ease-in duration-300'
     >
-      <div className=' m-auto flex justify-between items-center p-4 text-white'>
+      <div className=' m-auto flex justify-between items-center mx-auto p-4 text-white'>
         <Link href='/'>
           <svg
             xmlns='http://www.w3.org/2000/svg'

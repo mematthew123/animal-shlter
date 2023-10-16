@@ -2,7 +2,7 @@ import React from 'react';
 
 const LeftSide = () => {
   return (
-    <div className='flex mt-14 md:mt-20 mr-10 w-full md:w-2/3 flex-wrap md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
+    <div className='flex mt-14 md:mt-20 mr-10 lg:py-20 py-4 w-full md:w-2/3 flex-wrap md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:mr-6'>
         <img
           src='/ladyDog.jpg'
@@ -25,7 +25,7 @@ const LeftSide = () => {
 
 const RightSide = () => {
   return (
-    <div className='flex mt-14 md:mt-20 ml-auto w-full md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
+    <div className='flex mt-14 md:mt-20 ml-auto w-full lg:py-20 py-4   md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:ml-6'>
         <img
           src='/ladyDog.jpg'

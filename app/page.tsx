@@ -3,6 +3,7 @@ import Faqs from '@/components/Faqs';
 import Featured from '@/components/Featured';
 import Navigation from '@/components/NavBar';
 import SideBySide from '@/components/SideBySide';
+import ThreeItemGrid from '@/components/ThreeItemGrid';
 import {
   BoltIcon,
   GlobeAltIcon,
@@ -107,8 +108,8 @@ export default function Home() {
       {/* three columns */}
       <Columns />
       <SideBySide />
-      <Featured />
-
+      <ThreeItemGrid />
+      {/* <Featured /> */}
       <Faqs />
       <CallToAction />
     </>
