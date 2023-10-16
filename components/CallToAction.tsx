@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function CallToAction() {
   return (
-    <div className='bg-gradient-to-r from-green-400 to-blue-500 text-white py-12 px-4 md:px-0'>
+    <div className='bg-gradient-to-r from-green-400 to-blue-500 text-white mt-20 md:mt-40 py-20 sm:py-24 lg:py-32 px-4 md:px-0'>
       <div className='container mx-auto text-center'>
         <h2 className='text-4xl font-bold mb-4'>Give Them a Forever Home</h2>
         <p className='text-xl mb-8'>

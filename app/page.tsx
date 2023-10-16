@@ -2,6 +2,7 @@ import CallToAction from '@/components/CallToAction';
 import Faqs from '@/components/Faqs';
 import Featured from '@/components/Featured';
 import Navigation from '@/components/NavBar';
+import SideBySide from '@/components/SideBySide';
 import {
   BoltIcon,
   GlobeAltIcon,
@@ -32,9 +33,9 @@ const features = [
 ];
 function Columns() {
   return (
-    <div className='bg-white mt-16 md:mt-24 py-20 sm:py-24 lg:py-32'>
+    <div className='bg-white my-16 py-20 sm:py-24 lg:py-32'>
       <div className='mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8'>
-        <h2 className='sr-only'>A better way to send money.</h2>
+        <h2 className='sr-only'>Dogs and Cats for adoption</h2>
         <dl className='grid grid-cols-1 gap-16 lg:grid lg:grid-cols-3'>
           {features.map((feature) => (
             <div key={feature.name}>
@@ -60,7 +61,7 @@ function Columns() {
 export default function Home() {
   return (
     <>
-      <div className='relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20 pt-14'>
+      <div className='  relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
         <div
           className='absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96'
           aria-hidden='true'
@@ -70,7 +71,7 @@ export default function Home() {
             <h1 className='max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto'>
               TRACS <span className='text-indigo-600'>Animal</span> Shelter
             </h1>
-            <div className='mt-6 max-w-xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
+            <div className='mt-6 max-w-2xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
               <p className='text-lg leading-8 text-gray-600'>
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
@@ -105,9 +106,11 @@ export default function Home() {
       </div>
       {/* three columns */}
       <Columns />
+      <SideBySide />
+      <Featured />
+
       <Faqs />
       <CallToAction />
-      <Featured />
     </>
   );
 }
