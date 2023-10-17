@@ -1,6 +1,7 @@
 import CallToAction from '@/components/CallToAction';
 import Faqs from '@/components/Faqs';
 import Featured from '@/components/Featured';
+import Masonry from '@/components/Masonary';
 import Navigation from '@/components/NavBar';
 import SideBySide from '@/components/SideBySide';
 import ThreeItemGrid from '@/components/ThreeItemGrid';
@@ -10,6 +11,7 @@ import {
   ScaleIcon,
   StarIcon,
 } from '@heroicons/react/24/outline';
+import { Link } from 'lucide-react';
 import Image from 'next/image';
 
 const features = [
@@ -34,7 +36,7 @@ const features = [
 ];
 function Columns() {
   return (
-    <div className='bg-white my-16 py-20 sm:py-24 lg:py-32'>
+    <div className=' border-2 border-pink-500 bg-white my-16 py-20 sm:py-24 lg:py-32'>
       <div className='mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8'>
         <h2 className='sr-only'>Dogs and Cats for adoption</h2>
         <dl className='grid grid-cols-1 gap-16 lg:grid lg:grid-cols-3'>
@@ -62,12 +64,12 @@ function Columns() {
 export default function Home() {
   return (
     <>
-      <div className='  relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
+      <div className=' px-6 border-2 border-pink-500 relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
         <div
           className='absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96'
           aria-hidden='true'
         />
-        <div className='mx-auto max-w-7xl px-6 py-32 sm:py-40 lg:px-8'>
+        <div className='mx-auto max-w-7xl px-6 py-32 sm:py-40 '>
           <div className='mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8'>
             <h1 className='max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto'>
               TRACS <span className='text-indigo-600'>Animal</span> Shelter
@@ -95,7 +97,7 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src='https://images.unsplash.com/photo-1567532900872-f4e906cbf06a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1280&q=80'
+              src='/vectorDog.png'
               alt=''
               className='mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36'
               height={500}
@@ -108,6 +110,7 @@ export default function Home() {
       {/* three columns */}
       <Columns />
       <SideBySide />
+      <Masonry />
       <ThreeItemGrid />
       {/* <Featured /> */}
       <Faqs />

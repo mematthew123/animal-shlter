@@ -1,13 +1,16 @@
 import React from 'react';
+import Image from 'next/image';
 
 const LeftSide = () => {
   return (
-    <div className='flex mt-14 md:mt-20 mr-10 lg:py-20 py-4 w-full md:w-2/3 flex-wrap md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
+    <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mt-40 mr-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:mr-6'>
-        <img
+        <Image
           src='/ladyDog.jpg'
           alt='Descriptive Alt Text'
           className='w-full h-auto rounded-md shadow-sm'
+          height={500}
+          width={500}
         />
       </div>
       <div className='w-full md:w-1/2'>
@@ -25,12 +28,14 @@ const LeftSide = () => {
 
 const RightSide = () => {
   return (
-    <div className='flex mt-14 md:mt-20 ml-auto w-full lg:py-20 py-4   md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 p-6 rounded-lg shadow-md'>
+    <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mb-40 ml-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:ml-6'>
-        <img
+        <Image
           src='/ladyDog.jpg'
           alt='Descriptive Alt Text'
           className='w-full h-auto rounded-md shadow-sm'
+          height={500}
+          width={500}
         />
       </div>
       <div className='w-full md:w-1/2'>
@@ -45,10 +50,9 @@ const RightSide = () => {
     </div>
   );
 };
-
 export default function SideBySide() {
   return (
-    <div>
+    <div className=' border-2 md:mt-40 border-pink-500 mx-auto'>
       <LeftSide />
       <div className='h-20 lg:h-40' />
       <RightSide />

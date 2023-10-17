@@ -7,6 +7,10 @@ interface AnimalCardProps {
   description?: string;
   type: 'dog' | 'cat';
   temperament?: string[];
+  className?: string;
+  imageClassName?: string;
+
+  fullDescription?: boolean; // DUE TO USING LINE CLAMP IN THE ANIMAL CARD, WE NEED TO ADD A FULL DESCRIPTION PROP TO SHOW THE FULL DESCRIPTION ON THE SINGLE DOG PAGE...NOT SURE WHY I AM SHOUTING
 }
 
 export const AnimalCard: React.FC<AnimalCardProps> = ({
@@ -15,22 +19,35 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
   description,
   type,
   temperament,
+  className = '', // Default to an empty string if no className is provided
+  fullDescription = false,
+  imageClassName = '',
 }) => {
   console.log(temperament);
   return (
-    <div className='border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300'>
+    <div
+      className={`border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ${className}`}
+    >
       {image && (
         <Image
           src={image}
           alt={name}
           width={500}
           height={500}
-          className='w-full h-64 object-contain aspect-auto rounded-t-lg'
+          className={`w-full h-64 object-contain aspect-auto rounded-t-lg ${
+            imageClassName ?? ''
+          }`}
         />
       )}
       <div className='p-2'>
         <h2 className='text-xl font-semibold'>{name}</h2>
-        <p className='text-gray-600 mt-2 line-clamp-1'>{description}</p>
+        <p
+          className={`text-gray-600 mt-2 ${
+            fullDescription ? '' : 'line-clamp-1'
+          }`}
+        >
+          {description}
+        </p>{' '}
         <div className=' grid grid-cols-2 gap-2 mt-4'>
           {temperament?.map((temp) => (
             <span
@@ -41,7 +58,6 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
             </span>
           ))}
         </div>
-
         <span
           className={`inline-block mt-4 px-3 py-1 rounded-full text-xs font-medium ${
             type === 'dog'

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Featured() {
   return (
-    <div className='bg-white mt-20 md:mt-40 py-20 sm:py-24 lg:py-32'>
+    <div className='bg-white mt-20 md:mt-40 py-24 lg:py-32'>
       <div className='mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8'>
         <h1 className='text-4xl font-bold text-center text-gray-800 mb-16'>
           Featured Section

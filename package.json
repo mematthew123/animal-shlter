@@ -12,6 +12,7 @@
     "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "@radix-ui/react-accordion": "^1.1.2",
+    "@radix-ui/react-separator": "^1.0.3",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.16.7",
     "@types/node": "20.6.2",
