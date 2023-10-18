@@ -16,6 +16,10 @@ export async function singleDog(slug: any) {
         alt,
         "image": asset->url
       },
+      images[]{
+        alt,
+        "image": asset->url
+      },
       body,
       dogTemperament, 
     }`

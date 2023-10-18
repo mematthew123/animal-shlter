@@ -1,6 +1,5 @@
 import { defineField, defineType } from 'sanity';
 
-
 export default defineType({
   name: 'Animals',
   title: 'Animals',
@@ -52,6 +51,12 @@ export default defineType({
       ],
     }),
 
+    defineField({
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [{ type: 'image' }],
+    }),
     defineField({
       name: 'body',
       title: 'Body',

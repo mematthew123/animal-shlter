@@ -46,7 +46,7 @@ const Navigation = () => {
           </li>
         </ul>
         {/* Mobile Button */}
-        <div onClick={handleNav} className='block sm:hidden p-4 z-10'>
+        <div onClick={handleNav} className='block sm:hidden p-4 '>
           {nav ? (
             <AiOutlineClose size={25} style={{ color: 'black' }} />
           ) : (
