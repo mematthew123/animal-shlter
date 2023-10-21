@@ -12,6 +12,10 @@ export type Animal = {
     alt: string;
     image: string;
   };
+  images: {
+    alt: string;
+    image: string;
+  }[];
   body: PortableTextBlock[];
   dogTemperament?: string[];
   catTemperament?: string[];

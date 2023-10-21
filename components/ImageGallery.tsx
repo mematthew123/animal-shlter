@@ -17,16 +17,24 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
   };
 
   return (
-    <div>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl'>
+    <div className='container mx-auto px-0 flex flex-col items-center justify-center w-full max-w-6xl'>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full'>
         {images?.map((img, index) => (
-          <img
+          <div
             key={index}
-            className='rounded-t-lg w-full h-auto object-cover cursor-pointer'
-            src={img.image}
-            alt='dog'
+            className='relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer'
             onClick={() => handleImageClick(img.image)}
-          />
+          >
+            <div className='w-auto md:w-64 h-64 relative'>
+              <img
+                key={index}
+                className='absolute top-0 left-0 w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300'
+                src={img.image}
+                alt='dog'
+                loading='lazy'
+              />
+            </div>
+          </div>
         ))}
       </div>
 

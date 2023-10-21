@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Separator } from './ui/separator';
 
 interface AnimalCardProps {
   image?: string;
@@ -26,7 +27,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
   console.log(temperament);
   return (
     <div
-      className={`border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 ${className}`}
+      className={`border p-4 rounded-lg  transition-shadow duration-300 ${className}`}
     >
       {image && (
         <Image
@@ -39,6 +40,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
           }`}
         />
       )}
+      <Separator />
       <div className='p-2'>
         <h2 className='text-xl font-semibold'>{name}</h2>
         <p
