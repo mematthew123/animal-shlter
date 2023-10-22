@@ -43,7 +43,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           <img
             src={enlargedImage}
             alt='Enlarged dog image'
-            className='max-w-3/4 max-h-3/4'
+            className='container mx-auto max-w-6xl'
             onClick={closeEnlargedImage}
           />
         </div>

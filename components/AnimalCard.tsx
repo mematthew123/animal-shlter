@@ -1,4 +1,5 @@
-import React from 'react';
+'use client';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Separator } from './ui/separator';
 
@@ -10,24 +11,31 @@ interface AnimalCardProps {
   temperament?: string[];
   className?: string;
   imageClassName?: string;
-
-  fullDescription?: boolean; // DUE TO USING LINE CLAMP IN THE ANIMAL CARD, WE NEED TO ADD A FULL DESCRIPTION PROP TO SHOW THE FULL DESCRIPTION ON THE SINGLE DOG PAGE...NOT SURE WHY I AM SHOUTING
+  onCardClick?: () => void;
+  age?: number;
 }
 
 export const AnimalCard: React.FC<AnimalCardProps> = ({
   image,
   name,
   description,
-  type,
   temperament,
-  className = '', // Default to an empty string if no className is provided
-  fullDescription = false,
+  className = '',
   imageClassName = '',
+  onCardClick,
+  age,
 }) => {
-  console.log(temperament);
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div
-      className={`border p-4 rounded-lg  transition-shadow duration-300 ${className}`}
+      onClick={() => {
+        if (onCardClick) {
+          onCardClick();
+        }
+      }}
+      className={`border p-4 rounded-lg transition-shadow duration-300 ${className}`}
+      style={{ cursor: 'pointer' }}
     >
       {image && (
         <Image
@@ -35,40 +43,38 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
           alt={name}
           width={500}
           height={500}
-          className={`w-full h-64 object-contain aspect-auto rounded-t-lg ${
-            imageClassName ?? ''
-          }`}
+          className={`w-full h-64 object-contain aspect-auto rounded-t-lg ${imageClassName}`}
         />
       )}
       <Separator />
       <div className='p-2'>
         <h2 className='text-xl font-semibold'>{name}</h2>
-        <p
-          className={`text-gray-600 mt-2 ${
-            fullDescription ? '' : 'line-clamp-1'
-          }`}
+        {age && <p className='text-gray-600 mt-2'>{age} years old</p>}
+
+        {isExpanded && (
+          <>
+            <p className='text-gray-600 mt-2'>{description}</p>
+            <div className='grid grid-cols-2 gap-2 mt-4'>
+              {temperament?.map((temp) => (
+                <span
+                  key={temp}
+                  className='inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800'
+                >
+                  {temp}
+                </span>
+              ))}
+            </div>
+          </>
+        )}
+        <button
+          onClick={(e) => {
+            e.stopPropagation(); // Prevent outer div onClick from triggering
+            setIsExpanded(!isExpanded);
+          }}
+          className='mt-4 text-blue-500 hover:underline'
         >
-          {description}
-        </p>{' '}
-        <div className=' grid grid-cols-2 gap-2 mt-4'>
-          {temperament?.map((temp) => (
-            <span
-              key={temp}
-              className='inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800'
-            >
-              {temp}
-            </span>
-          ))}
-        </div>
-        <span
-          className={`inline-block mt-4 px-3 py-1 rounded-full text-xs font-medium ${
-            type === 'dog'
-              ? 'bg-blue-200 text-blue-800'
-              : 'bg-pink-200 text-pink-800'
-          }`}
-        >
-          {type}
-        </span>
+          {isExpanded ? 'Show less' : 'Show more'}
+        </button>
       </div>
     </div>
   );

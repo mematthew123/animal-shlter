@@ -14,7 +14,7 @@ export default function Featured() {
                 <div className='flex-shrink-0'>
                   <img
                     className='h-48 w-full object-cover'
-                    src='/ladyDog.jpg'
+                    src='/SmileyLadyDog.jpg'
                     alt={`Descriptive Alt Text for Item ${item}`}
                   />
                 </div>

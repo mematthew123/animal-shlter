@@ -13,7 +13,7 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/ladyDog.jpg'
+              src='/SmileyLadyDog.jpg'
               alt='Description of Image 1'
               height={500}
               width={500}
@@ -31,7 +31,7 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/ladyDog.jpg'
+              src='/SmileyLadyDog.jpg'
               alt='Description of Image 2'
               height={500}
               width={500}
@@ -49,7 +49,7 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/ladyDog.jpg'
+              src='/SmileyLadyDog.jpg'
               alt='Description of Image 3'
               height={500}
               width={500}

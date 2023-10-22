@@ -14,11 +14,10 @@ export async function getDogs() {
       },
       body,
       dogTemperament, 
+      age,
     }`
   );
 }
-
-
 
 export async function getDog(slug: any) {
   return client.fetch(
@@ -37,6 +36,7 @@ export async function getDog(slug: any) {
       },
       body,
       dogTemperament, 
+      age,
     }`
   );
 }

@@ -1,7 +1,6 @@
-import { client } from "../lib/client";
-import groq from "groq";
+import { client } from '../lib/client';
+import groq from 'groq';
 
-  
 export async function getAnimals() {
   return client.fetch(
     groq`*[_type == "Animals"]{
@@ -14,6 +13,7 @@ export async function getAnimals() {
         "image": asset->url
       },
       body
+      age,
     }`
-  );  
+  );
 }

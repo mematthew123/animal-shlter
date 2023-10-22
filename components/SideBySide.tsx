@@ -6,7 +6,7 @@ const LeftSide = () => {
     <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mt-40 mr-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:mr-6'>
         <Image
-          src='/ladyDog.jpg'
+          src='/SmileyLadyDog.jpg'
           alt='Descriptive Alt Text'
           className='w-full h-auto rounded-md shadow-sm'
           height={500}
@@ -31,7 +31,7 @@ const RightSide = () => {
     <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mb-40 ml-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:ml-6'>
         <Image
-          src='/ladyDog.jpg'
+          src='/manDog.jpg'
           alt='Descriptive Alt Text'
           className='w-full h-auto rounded-md shadow-sm'
           height={500}

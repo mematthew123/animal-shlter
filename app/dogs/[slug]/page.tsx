@@ -28,7 +28,7 @@ export default async function Page({ params }: { params: any }) {
                 alt={dog.name}
                 width={500}
                 height={500}
-                className='rounded-t-lg w-full h-[600px] object-cover cursor-pointer'
+                className='rounded-t-lg mb-2 w-full h-[600px] object-cover cursor-pointer'
               />
             </div>
             <Separator />
@@ -38,7 +38,7 @@ export default async function Page({ params }: { params: any }) {
       </div>
       <Separator />
       <p className='text-xl font-semibold mt-10'>About {data[0].name}</p>
-      <div className='flex justify-center'>
+      <div className='flex prose prose-lg mx-auto'>
         <PortableText value={data[0].body} />
       </div>
     </div>

@@ -19,4 +19,6 @@ export type Animal = {
   body: PortableTextBlock[];
   dogTemperament?: string[];
   catTemperament?: string[];
+  childFriendly?: string[];
+  energyLevel?: string[];
 };

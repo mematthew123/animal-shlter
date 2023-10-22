@@ -14,6 +14,7 @@ export async function getCats() {
       },
       body,
       catTemperament,
+      age,
     }`
   );
 }
