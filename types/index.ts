@@ -49,3 +49,13 @@ export type BlogPost = {
   publishedAt: string;
   excerpt: string;
 };
+
+export type RecentlyAdopted = {
+  _id: string;
+  gallery: {
+    asset: {
+      _ref: string;
+      _type: string;
+    };
+  }[];
+};

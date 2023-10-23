@@ -11,6 +11,15 @@ const Navigation = () => {
     setNav(!nav);
   };
 
+  // we want to hide the navbar for the route /studio
+
+  if (
+    typeof window !== 'undefined' &&
+    window.location.pathname.includes('/studio')
+  ) {
+    return <></>;
+  }
+
   return (
     <div className='fixed left-0 top-0 w-full z-10 ease-in duration-300 bg-white'>
       <div className=' flex justify-between items-center mx-auto  text-black'>
@@ -25,7 +34,7 @@ const Navigation = () => {
             </svg>
           </Link>
         </div>
-        <ul className='hidden sm:flex'>
+        <ul className='hidden font-semibold text-base sm:flex'>
           <li className='p-4'>
             <Link href='/dogs'>Dogs</Link>
           </li>
@@ -38,9 +47,9 @@ const Navigation = () => {
           <li className='p-4'>
             <Link href='/contact'>Contact</Link>
           </li>
-          <li className='p-4'>
+          {/* <li className='p-4'>
             <Link href='/donate'>Donate</Link>
-          </li>
+          </li> */}
           <li className='p-4'>
             <Link href='/blog'>Blog</Link>
           </li>

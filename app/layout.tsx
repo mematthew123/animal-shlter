@@ -16,6 +16,15 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // we want to exclude the navbar from the sanity studio route
+
+  if (
+    typeof window !== 'undefined' &&
+    window.location.pathname.includes('/studio')
+  ) {
+    return <>{children}</>;
+  }
+
   return (
     <html lang='en'>
       <body className='bg-gray-50 text-gray-900 outline-4 font-sans antialiased px-12  mx-auto'>
