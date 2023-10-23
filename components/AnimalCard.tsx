@@ -47,22 +47,25 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
         />
       )}
       <Separator />
-      <div className='p-2'>
+      <div className='p-2 space-y-4'>
         <h2 className='text-xl font-semibold'>{name}</h2>
-        {age && <p className='text-gray-600 mt-2'>{age} years old</p>}
+        {age && <p className='text-gray-600'>{age} years old</p>}
 
         {isExpanded && (
           <>
-            <p className='text-gray-600 mt-2'>{description}</p>
-            <div className='grid grid-cols-2 gap-2 mt-4'>
-              {temperament?.map((temp) => (
-                <span
-                  key={temp}
-                  className='inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800'
-                >
-                  {temp}
-                </span>
-              ))}
+            <p className='text-gray-600'>{description}</p>
+            <div className='mt-4'>
+              <h3 className='text-lg font-medium mb-2'>Temperament:</h3>
+              <div className='grid grid-cols-2 gap-2'>
+                {temperament?.map((temp) => (
+                  <span
+                    key={temp}
+                    className='inline-block px-3 py-1 rounded-full text-xs font-medium bg-gray-200 text-gray-800'
+                  >
+                    {temp}
+                  </span>
+                ))}
+              </div>
             </div>
           </>
         )}
@@ -71,7 +74,7 @@ export const AnimalCard: React.FC<AnimalCardProps> = ({
             e.stopPropagation(); // Prevent outer div onClick from triggering
             setIsExpanded(!isExpanded);
           }}
-          className='mt-4 text-blue-500 hover:underline'
+          className='text-blue-500 hover:underline'
         >
           {isExpanded ? 'Show less' : 'Show more'}
         </button>

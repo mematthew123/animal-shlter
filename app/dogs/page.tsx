@@ -7,17 +7,16 @@ import Link from 'next/link';
 
 export default async function page() {
   const data = await getDogs();
-  console.log(data);
 
   return (
-    <div className='mx-auto py-2 container flex flex-col items-center justify-center'>
-      <h1 className='text-4xl mt-20 mb-10'>Dogs</h1>
-      <p className='text-xl font-semibold mb-10'>
-        Help us find these dogs a loving home.
-      </p>
-      <p className='text-xl font-semibold mb-10'>
-        Inquire today about adopting your new best friend!
-      </p>
+    <div className='mx-auto py-6 container flex flex-col items-center justify-center space-y-8'>
+      <h1 className='text-5xl font-bold mt-20'>Dogs</h1>
+      <div className='text-center space-y-4'>
+        <p className='text-2xl'>Help us find these dogs a loving home.</p>
+        <p className='text-xl'>
+          Inquire today about adopting your new best friend!
+        </p>
+      </div>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl'>
         {data.map((dog: Animal) => (
           <AnimalCard
@@ -28,7 +27,7 @@ export default async function page() {
             type='dog'
             temperament={dog.dogTemperament?.slice(0, 2)}
             onCardClick={() => {
-              window.location.href = `/dogs/${dog.slug.current}`; // Navigate to the dogs's page when the card is clicked
+              window.location.href = `/dogs/${dog.slug.current}`; // Navigate to the dog's page when the card is clicked
             }}
           />
         ))}
