@@ -22,6 +22,18 @@ export async function singleDog(slug: any) {
       },
       body,
       dogTemperament, 
+      age,
+      weight,
+      color,
+      breed,
+      spayedNeutered,
+      houseTrained,
+      vaccinated,
+      specialNeeds,
+      goodWithDogs,
+      goodWithCats,
+      goodWithKids,
+
     }`
   );
 }

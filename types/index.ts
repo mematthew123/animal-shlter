@@ -21,4 +21,15 @@ export type Animal = {
   catTemperament?: string[];
   childFriendly?: string[];
   energyLevel?: string[];
+  specialNeeds: any;
+  age: number;
+  weight: number;
+  color: string;
+  breed: string;
+  spayedNeutered: boolean;
+  houseTrained: boolean;
+  vaccinated: boolean;
+  goodWithKids: boolean;
+  goodWithCats: any;
+  goodWithDogs: any;
 };

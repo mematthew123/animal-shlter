@@ -78,10 +78,121 @@ export default defineType({
     }),
 
     defineField({
+      name: 'weight',
+      title: 'Weight',
+      type: 'number',
+      description: 'Weight of the animal in pounds',
+    }),
+
+    defineField({
       name: 'breed',
       title: 'Breed',
       type: 'string',
       description: 'Breed of the animal',
+    }),
+
+    defineField({
+      name: 'declawed',
+      title: 'Declawed',
+      type: 'boolean',
+      description: 'Is the cat declawed?',
+      hidden: ({ parent }) => parent?.type !== 'cat',
+    }),
+
+    defineField({
+      name: 'houseTrained',
+      title: 'House Trained',
+      type: 'boolean',
+      description: 'Is the animal house trained?',
+    }),
+
+    defineField({
+      name: 'spayedNeutered',
+      title: 'Spayed/Neutered',
+      type: 'boolean',
+      description: 'Is the animal spayed/neutered?',
+    }),
+
+    defineField({
+      name: 'vaccinated',
+      title: 'Vaccinated',
+      type: 'boolean',
+      description: 'Is the animal vaccinated?',
+    }),
+
+    defineField({
+      name: 'goodWithKids',
+      title: 'Good With Kids',
+      type: 'boolean',
+      description: 'Is the animal good with kids?',
+    }),
+
+    defineField({
+      name: 'goodWithDogs',
+      title: 'Good With Dogs',
+      type: 'boolean',
+      description: 'Is the animal good with dogs?',
+    }),
+
+    defineField({
+      name: 'goodWithCats',
+      title: 'Good With Cats',
+      type: 'boolean',
+      description: 'Is the animal good with cats?',
+    }),
+
+    defineField({
+      name: 'specialNeeds',
+      title: 'Special Needs',
+      type: 'boolean',
+      description: 'Does the animal have special needs?',
+    }),
+
+    defineField({
+      name: 'specialNeedsDescription',
+      title: 'Special Needs Description',
+      type: 'string',
+      description: "Description of the animal's special needs",
+      hidden: ({ parent }) => !parent?.specialNeeds,
+    }),
+
+    defineField({
+      name: 'adoptionFee',
+      title: 'Adoption Fee',
+      type: 'number',
+      description: 'Adoption fee for the animal',
+    }),
+
+    defineField({
+      name: 'catEnergyLevel',
+      title: 'Energy Level',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Low', value: 'low' },
+          { title: 'Medium', value: 'medium' },
+          { title: 'High', value: 'high' },
+        ],
+      },
+      hidden: ({ parent }) => parent?.type !== 'cat',
+      description: 'Select the energy level that best describes the cat.',
+    }),
+
+    defineField({
+      name: 'dogEnergyLevel',
+      title: 'Energy Level',
+      type: 'array',
+      of: [{ type: 'string' }],
+      options: {
+        list: [
+          { title: 'Low', value: 'low' },
+          { title: 'Medium', value: 'medium' },
+          { title: 'High', value: 'high' },
+        ],
+      },
+      hidden: ({ parent }) => parent?.type !== 'dog',
+      description: 'Select the energy level that best describes the dog.',
     }),
 
     defineField({
@@ -110,19 +221,11 @@ export default defineType({
           { title: 'Reactive', value: 'reactive' },
           { title: 'Cuddly', value: 'cuddly' },
           { title: 'Protective', value: 'protective' },
-          { title: 'Loyal', value: 'loyal' },
           { title: 'Energetic', value: 'energetic' },
           { title: 'Lazy', value: 'lazy' },
           { title: 'Friendly', value: 'friendly' },
           { title: 'Aggressive', value: 'aggressive' },
           { title: 'Shy', value: 'shy' },
-          { title: 'Calm', value: 'calm' },
-          { title: 'Quiet', value: 'quiet' },
-          { title: 'Loving', value: 'loving' },
-          { title: 'Affectionate', value: 'affectionate' },
-          { title: 'Intelligent', value: 'intelligent' },
-          { title: 'Gentle', value: 'gentle' },
-          { title: 'Confident', value: 'confident' },
         ],
       },
       hidden: ({ parent }) => parent?.type !== 'dog',

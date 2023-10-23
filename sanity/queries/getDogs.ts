@@ -15,6 +15,14 @@ export async function getDogs() {
       body,
       dogTemperament, 
       age,
+      weight,
+      color,
+      age,
+      breed,
+      spayedNeutered,
+      houseTrained,
+      vaccinated,
+      specialNeeds,
     }`
   );
 }
@@ -37,6 +45,16 @@ export async function getDog(slug: any) {
       body,
       dogTemperament, 
       age,
+      weight,
+      color,
+      age,
+      breed,
+      spayedNeutered,
+      houseTrained,
+      vaccinated,
+      specialNeeds,
+      goodWithDogs,
+
     }`
   );
 }

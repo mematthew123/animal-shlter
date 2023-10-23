@@ -12,6 +12,12 @@ export default async function page() {
   return (
     <div className='mx-auto py-2 container flex flex-col items-center justify-center'>
       <h1 className='text-4xl mt-20 mb-10'>Dogs</h1>
+      <p className='text-xl font-semibold mb-10'>
+        Help us find these dogs a loving home.
+      </p>
+      <p className='text-xl font-semibold mb-10'>
+        Inquire today about adopting your new best friend!
+      </p>
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl'>
         {data.map((dog: Animal) => (
           <AnimalCard
