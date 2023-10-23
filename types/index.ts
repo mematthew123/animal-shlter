@@ -33,3 +33,19 @@ export type Animal = {
   goodWithCats: any;
   goodWithDogs: any;
 };
+
+export type BlogPost = {
+  _id: string;
+  title: string;
+  slug: {
+    _type: string;
+    current: string;
+  };
+  mainImage: {
+    alt: string;
+    image: string;
+  };
+  body: PortableTextBlock[];
+  publishedAt: string;
+  excerpt: string;
+};
