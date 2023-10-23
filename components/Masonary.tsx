@@ -1,32 +1,33 @@
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
-import Link from 'next/link';
+import { getRecentlyAdopted } from '@/sanity/queries/getRecentlyAdopted';
 
-export default function Masonry() {
-  // Sample data for adopted dogs
-  const adoptedDogs = [
-    { id: 1, img: '/sample.jpg', alt: 'Adopted Dog 1' },
-    { id: 2, img: '/sample.jpg', alt: 'Adopted Dog 2' },
-    { id: 3, img: '/sample.jpg', alt: 'Adopted Dog 3' },
-    { id: 4, img: '/sample.jpg', alt: 'Adopted Dog 4' },
-    { id: 5, img: '/sample.jpg', alt: 'Adopted Dog 5' },
-    { id: 6, img: '/sample.jpg', alt: 'Adopted Dog 6' },
-    { id: 7, img: '/sample.jpg', alt: 'Adopted Dog 7' },
+export default async function Masonry() {
+  // we will render the images from getRecentlyAdopted
 
-    // TODO: Replace with data from Sanity
-  ];
-
+  const data = await getRecentlyAdopted();
+  const adoptedDogs = data.flatMap((dog: { galleryImages: any[] }) =>
+    dog.galleryImages.map((img) => ({ img }))
+  );
   return (
     <div className='mt-20  md:mt-40 py-24 px-4  max-w-6xl mx-auto'>
-      <h1 className='text-4xl font-bold text-center text-gray-800 mb-16'>
+      <h1 className='text-4xl font-bold md:mt-40 text-center text-gray-800 mb-16'>
         Previously Adopted Dogs
       </h1>
       <div className='grid gap-4 md:gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mb-16'>
-        {adoptedDogs.map((dog, index) => (
-          <div
-            key={dog.id}
-            className={`bg-gray-100 overflow-hidden 
+        {adoptedDogs.map(
+          (
+            dog: {
+              id: React.Key | null | undefined;
+              img: string;
+              alt: string;
+            },
+            index: number
+          ) => (
+            <div
+              key={dog.id}
+              className={`bg-gray-100 overflow-hidden 
                         ${
                           index % 5 === 0
                             ? ' col-span-1 lg:row-span-2 lg:col-span-2'
@@ -37,16 +38,17 @@ export default function Masonry() {
                             ? ' col-span-1  lg:col-span-1 lg:row-span-2'
                             : ''
                         }`}
-          >
-            <Image
-              className='w-full h-full object-cover transform hover:scale-105 transition-transform duration-300'
-              src={dog.img}
-              alt={dog.alt}
-              height={500}
-              width={500}
-            />
-          </div>
-        ))}
+            >
+              <Image
+                className='w-full h-full object-cover transform hover:scale-105 transition-transform duration-300'
+                src={dog.img}
+                alt={dog.alt}
+                height={500}
+                width={500}
+              />
+            </div>
+          )
+        )}
       </div>
 
       <Separator className='my-4' />
