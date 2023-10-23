@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 const LeftSide = () => {
   return (
-    <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mt-40 mr-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
+    <div className='flex  my-16 py-20 sm:py-24   mt-20 md:mt-40 mr-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:mr-6'>
         <Image
           src='/SmileyLadyDog.jpg'
@@ -28,7 +28,7 @@ const LeftSide = () => {
 
 const RightSide = () => {
   return (
-    <div className='flex border-2  my-16 py-20 sm:py-24  border-green-500 mt-20 md:mb-40 ml-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
+    <div className='flex   my-16 py-20 sm:py-24 mt-20 md:mb-40 ml-auto w-full lg:py-20  md:w-2/3 flex-wrap-reverse md:flex-nowrap items-center bg-gray-100 rounded-lg shadow-md'>
       <div className='w-full mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8 md:w-1/2 mb-4 md:mb-0 md:ml-6'>
         <Image
           src='/manDog.jpg'
@@ -52,7 +52,7 @@ const RightSide = () => {
 };
 export default function SideBySide() {
   return (
-    <div className=' border-2 md:mt-40 border-pink-500 mx-auto'>
+    <div className='  md:mt-40  mx-auto'>
       <LeftSide />
       <div className='h-20 lg:h-40' />
       <RightSide />

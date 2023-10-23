@@ -12,7 +12,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className='fixed border-4 border-blue-400 left-0 top-0 w-full z-10 ease-in duration-300 bg-white'>
+    <div className='fixed left-0 top-0 w-full z-10 ease-in duration-300 bg-white'>
       <div className=' flex justify-between items-center mx-auto  text-black'>
         <div className='flex-shrink-0 p-4 '>
           <Link href='/' aria-label='Home'>

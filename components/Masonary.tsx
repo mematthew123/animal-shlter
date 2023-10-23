@@ -18,7 +18,7 @@ export default function Masonry() {
   ];
 
   return (
-    <div className='mt-20 border-2 border-pink-500 md:mt-40 py-24 px-4  max-w-6xl mx-auto'>
+    <div className='mt-20  md:mt-40 py-24 px-4  max-w-6xl mx-auto'>
       <h1 className='text-4xl font-bold text-center text-gray-800 mb-16'>
         Previously Adopted Dogs
       </h1>

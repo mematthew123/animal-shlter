@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 export default function ThreeItemGrid() {
   return (
-    <div className='mt-20 md:mt-40  border-2 border-pink-500 py-20 sm:py-24 lg:py-32'>
+    <div className='mt-20 md:mt-40   py-20 sm:py-24 lg:py-32'>
       <div className='mx-auto '>
         <h1 className='text-4xl font-bold text-center text-gray-800 mb-16'>
           Three Item Grid

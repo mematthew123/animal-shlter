@@ -1,3 +1,4 @@
+'use client';
 import React from 'react';
 import type { Animal } from '@/types';
 import { getCats } from '@/sanity/queries/getCats';

@@ -36,7 +36,7 @@ const features = [
 ];
 function Columns() {
   return (
-    <div className=' border-2 border-pink-500 bg-white my-16 py-20 sm:py-24 lg:py-32'>
+    <div className='  bg-white my-16 py-20 sm:py-24 lg:py-32'>
       <div className='mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8'>
         <h2 className='sr-only'>Dogs and Cats for adoption</h2>
         <dl className='grid grid-cols-1 gap-16 lg:grid lg:grid-cols-3'>
@@ -64,7 +64,7 @@ function Columns() {
 export default function Home() {
   return (
     <>
-      <div className=' px-6 border-2 border-pink-500 relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
+      <div className=' px-6  relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
         <div
           className='absolute inset-y-0 right-1/2 -z-10 -mr-96 w-[200%] origin-top-right skew-x-[-30deg] bg-white shadow-xl shadow-indigo-600/10 ring-1 ring-indigo-50 sm:-mr-80 lg:-mr-96'
           aria-hidden='true'
