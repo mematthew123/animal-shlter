@@ -1,7 +1,10 @@
-import React from 'react';
 import Image from 'next/image';
+import { getPosts } from '@/sanity/queries/getPosts';
+import { BlogPost } from '@/types';
 
-export default function ThreeItemGrid() {
+export default async function ThreeItemGrid() {
+  const data = await getPosts();
+
   return (
     <div className='mt-20 md:mt-40 py-20 sm:py-24 lg:py-32 p-6'>
       <div className='mx-auto '>
@@ -13,12 +16,14 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/smileyLadyDog.jpg'
+              src={data[0]?.mainImage.image}
               alt='Description of Image 1'
               height={500}
               width={500}
             />
-            <h3 className='text-xl font-bold text-gray-800 mb-4'>Item 1</h3>
+            <h3 className='text-xl font-bold text-gray-800 mb-4'>
+              {data[0]?.title}
+            </h3>
             <p className='text-gray-600 mb-4'>
               Description for the first item in the grid.
             </p>
@@ -31,12 +36,14 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/SmileyLadyDog.jpg'
+              src={data[1]?.mainImage.image}
               alt='Description of Image 2'
               height={500}
               width={500}
             />
-            <h3 className='text-xl font-bold text-gray-800 mb-4'>Item 2</h3>
+            <h3 className='text-xl font-bold text-gray-800 mb-4'>
+              {data[1]?.title}
+            </h3>{' '}
             <p className='text-gray-600 mb-4'>
               Description for the second item in the grid.
             </p>
@@ -49,12 +56,14 @@ export default function ThreeItemGrid() {
           <div className='flex flex-col bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300 ease-in-out'>
             <Image
               className='mb-6 rounded-md h-40 w-full object-cover'
-              src='/SmileyLadyDog.jpg'
+              src={data[2]?.mainImage.image}
               alt='Description of Image 3'
               height={500}
               width={500}
             />
-            <h3 className='text-xl font-bold text-gray-800 mb-4'>Item 3</h3>
+            <h3 className='text-xl font-bold text-gray-800 mb-4'>
+              {data[2]?.title}
+            </h3>{' '}
             <p className='text-gray-600 mb-4'>
               Description for the third item in the grid.
             </p>
