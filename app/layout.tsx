@@ -27,7 +27,7 @@ export default function RootLayout({
 
   return (
     <html lang='en'>
-      <body className='bg-gray-50 text-gray-900 outline-4 font-sans antialiased px-12  mx-auto'>
+      <body className='bg-gray-50 text-gray-900 outline-4 font-sans antialiased  px-8 md:px-12  mx-auto'>
         <Navigation />
         {children}
         <Footer />

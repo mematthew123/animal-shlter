@@ -2,11 +2,11 @@ import React from 'react';
 
 export default function CallToAction() {
   return (
-    <div className='mt-20  py-20 sm:py-24 lg:py-32 p-6'>
+    <div className='mt-20  py-20 sm:py-24 lg:py-32 '>
       <div className=' relative  bg-gradient-to-r from-green-400 to-blue-500 text-white mt-20 md:mt-40 py-20 sm:py-24 lg:py-32 p-6 '>
         <div className='container mx-auto text-center  '>
           <h2 className='text-4xl font-bold mb-4'>Give Them a Forever Home</h2>
-          <p className='text-xl mb-8'>
+          <p className='text-xl mb-8 hidden md:block '>
             Join our mission to rescue and find loving homes for every animal in
             our care.
           </p>

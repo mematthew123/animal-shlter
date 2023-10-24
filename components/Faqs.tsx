@@ -33,6 +33,12 @@ function AccordionComponent() {
             I am currently working on a course for this. Stay tuned!
           </AccordionContent>
         </AccordionItem>
+        <AccordionItem value='item-4'>
+          <AccordionTrigger>Can i bring my dog to the mall?</AccordionTrigger>
+          <AccordionContent>
+            Yes, but only if you&apos;re prepared to buy them a new outfit.
+          </AccordionContent>
+        </AccordionItem>
       </Accordion>
     </>
   );
