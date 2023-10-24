@@ -23,7 +23,7 @@ const LeftSide = () => {
         </p>
         <a
           href='/about'
-          className='text-blue-600 flex justify-center hover:underline'
+          className='text-blue-600 font-semibold text-lg my-6 flex justify-center hover:underline'
         >
           Read More
         </a>
@@ -53,10 +53,10 @@ const RightSide = () => {
           deductible.
         </p>
         <a
-          href='/donate'
-          className='text-blue-600 flex justify-center hover:underline'
+          href='https://donate.stripe.com/test_aEUaHl5eH0bI3Re144'
+          className='text-blue-600 font-semibold text-lg my-6 flex justify-center hover:underline'
         >
-          Read More
+          Donate Now
         </a>
       </div>
     </div>

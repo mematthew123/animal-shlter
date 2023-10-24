@@ -12,7 +12,7 @@ export default function CallToAction() {
           </p>
           <div className='flex flex-col md:flex-row justify-center  gap-4 '>
             <a
-              href='/adopt'
+              href='/dogs'
               aria-label='Adopt a dog'
               className='bg-white text-green-900 hover:bg-green-900 hover:text-white transition duration-300 py-2 px-6 rounded-full font-semibold text-lg'
             >
@@ -20,7 +20,7 @@ export default function CallToAction() {
             </a>
             <a
               aria-label='Donate to the shelter'
-              href='/donate'
+              href='https://donate.stripe.com/test_aEUaHl5eH0bI3Re144'
               className='bg-white text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300 py-2 px-6 rounded-full font-semibold text-lg'
             >
               Donate

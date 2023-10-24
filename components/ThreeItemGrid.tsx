@@ -9,10 +9,10 @@ import { Separator } from './ui/separator';
 export default function ThreeItemGrid() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   useEffect(() => {
-    getPosts().then((posts) => setPosts(posts));
+    getPosts().then((posts) => setPosts(posts.slice(0, 3)));
   }, []);
   return (
-    <div className='mt-20 md:mt-40 py-20 sm:py-24 lg:py-32 p-6'>
+    <div className='mt-20 md:mt-40 py-20 sm:py-24 lg:py-32'>
       <div className='mx-auto '>
         <h1 className='text-4xl font-bold text-center text-gray-800 mb-16'>
           Keep up on the latest news
