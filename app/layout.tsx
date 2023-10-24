@@ -1,10 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import Navigation from '@/components/NavBar';
 import Footer from '@/components/Footer';
-
-const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Code ❤️ Dogs',
@@ -17,7 +14,6 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   // we want to exclude the navbar from the sanity studio route
-
   if (
     typeof window !== 'undefined' &&
     window.location.pathname.includes('/studio')
@@ -27,7 +23,7 @@ export default function RootLayout({
 
   return (
     <html lang='en'>
-      <body className='bg-neutral-50 text-gray-900 outline-4 font-sans antialiased  px-8 md:px-12  mx-auto'>
+      <body className='bg-neutral-50 text-gray-900 font-sans antialiased  px-8 md:px-12  mx-auto'>
         <Navigation />
         {children}
         <Footer />
