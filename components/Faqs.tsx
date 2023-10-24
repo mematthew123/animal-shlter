@@ -46,7 +46,7 @@ function AccordionComponent() {
 
 export default function Faqs() {
   return (
-    <div className='bg-white mt-20 md:mt-40 py-20 sm:py-24   lg:py-32'>
+    <div className='bg-gray-100 mt-20 md:mt-40 py-20 sm:py-24   lg:py-32'>
       <div className='mx-auto max-w-xl mb-10 px-6 lg:max-w-7xl lg:px-8'>
         <AccordionComponent />
       </div>

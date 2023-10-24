@@ -3,7 +3,7 @@ import React from 'react';
 export default function page() {
   return (
     <>
-      <section className='flex items-center md:mt-0 lg:h-screen mt-20 '>
+      <section className='flex items-center md:mt-2 lg:h-screen mt-20 '>
         <div className='justify-center flex-1 max-w-6xl py-4 mx-auto lg:py-6 md:px-6'>
           <div className='px-4 mb-10 md:text-center md:mb-20'>
             <p className='mb-2 text-lg font-semibold text-blue-500 dark:text-gray-400'>
@@ -99,7 +99,7 @@ export default function page() {
             </div>
             <div className='relative w-full px-4 mb-10 md:w-1/2 lg:mb-0'>
               <img
-                src='https://i.postimg.cc/HsSPvTq8/pexels-fauxels-3184357.jpg'
+                src='/mammoth.png'
                 alt=''
                 className='relative z-40 object-cover w-full rounded-md md:h-96 h-44'
               />
