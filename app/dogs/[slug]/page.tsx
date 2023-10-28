@@ -32,7 +32,7 @@ export default async function Page({ params }: { params: any }) {
       <Separator />
 
       {data.map((dog: Animal) => (
-        <div key={dog._id} className='space-y-6'>
+        <div key={dog._id} className='space-y-6 max-w-prose'>
           <h2 className='text-3xl font-semibold'>About {data[0].name}</h2>
 
           <div className='grid grid-cols-2 gap-4'>
@@ -76,7 +76,7 @@ export default async function Page({ params }: { params: any }) {
             </div>
           </div>
 
-          <div className='flex prose prose-lg mx-auto'>
+          <div className='flex prose text-xl prose-lg mx-auto'>
             <PortableText value={dog.body} />
           </div>
         </div>

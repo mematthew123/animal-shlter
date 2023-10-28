@@ -14,7 +14,7 @@ export default async function Page({ params }: { params: any }) {
         height={400}
         className='rounded-lg shadow-sm content-center align-middle'
       />
-      <div className='prose'>
+      <div className='text-2xl max-w-prose'>
         <PortableText value={data[0].body} />
       </div>
     </div>
