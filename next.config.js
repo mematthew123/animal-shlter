@@ -1,7 +1,3 @@
-/** @type {import('next').NextConfig} */
-
-module.exports = nextConfig;
-
 const path = require('path');
 const withPWAInit = require('next-pwa');
 
@@ -33,6 +29,9 @@ const generateAppDirEntry = (entry) => {
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  images: {
+    domains: ['images.unsplash.com', 'cdn.sanity.io'],
+  },
   webpack: (config) => {
     const entry = generateAppDirEntry(config.entry);
     config.entry = () => entry;

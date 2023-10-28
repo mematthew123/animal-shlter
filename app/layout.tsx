@@ -6,6 +6,10 @@ import Footer from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Code ❤️ Dogs',
   description: 'Made with Nextjs for dogs',
+  manifest: '/manifest.json',
+  viewport: 'width=device-width, initial-scale=1',
+  icons: ['/favicon.ico'],
+  themeColor: '#ffffff',
 };
 
 export default function RootLayout({
