@@ -10,6 +10,7 @@ export default async function Masonry() {
   const adoptedDogs = data.flatMap((dog: { galleryImages: any[] }) =>
     dog.galleryImages.map((img) => ({ img }))
   );
+  console.log(adoptedDogs);
   return (
     <div className='mt-20  md:mt-40 py-24 px-4  max-w-6xl mx-auto'>
       <h1 className='text-4xl font-bold md:mt-40 text-center text-gray-800 mb-16'>

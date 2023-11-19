@@ -66,7 +66,7 @@ export default function Home() {
             <h1 className='max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto'>
               TRACS <span className='text-blue-600'>Animal</span> Shelter
             </h1>
-            <div className='mt-6 max-w-2xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
+            <div className='mt-6 z-0 max-w-2xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
               <p className='text-lg leading-8 text-gray-600'>
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
@@ -91,7 +91,7 @@ export default function Home() {
             <Image
               src='/altDog.png'
               alt=''
-              className='mt-10 aspect-[6/5] w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36'
+              className='mt-10 aspect-[6/5] z-0 w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36'
               height={500}
               width={500}
             />
