@@ -9,7 +9,23 @@ export default defineType({
       name: 'gallery',
       title: 'Gallery',
       type: 'array',
-      of: [{ type: 'image' }],
+      of: [
+        {
+          type: 'image',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alternative Text',
+              description:
+                'A short description of the image for accessibility and SEO',
+            },
+          ],
+          options: {
+            hotspot: true, // Enables hotspot for precise control of how images are cropped
+          },
+        },
+      ],
     }),
   ],
 });
