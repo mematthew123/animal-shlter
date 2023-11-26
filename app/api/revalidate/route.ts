@@ -27,9 +27,9 @@ import { parseBody } from 'next-sanity/webhook';
 import { SanityDocument } from '@sanity/types';
 import { NextResponse } from 'next/server';
 import { revalidatePath } from 'next/cache';
-import { NextApiRequest } from 'next';
+import { NextRequest } from 'next/server';
 
-export async function POST(request: NextApiRequest) {
+export async function POST(request: NextRequest) {
   try {
     const { body, isValidSignature } = await parseBody(
       request,
