@@ -53,6 +53,7 @@ export async function POST(request: NextRequest) {
     const staleRoutes = [
       `/post/${sanityBody.slug.current}`,
       `/dogs/${sanityBody.slug.current}`,
+      `/cats/${sanityBody.slug.current}`,
       '/',
     ];
 

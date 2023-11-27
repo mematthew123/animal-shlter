@@ -2,7 +2,6 @@ import React from 'react';
 import { Separator } from '@/components/ui/separator';
 import Image from 'next/image';
 import { getRecentlyAdopted } from '@/sanity/queries/getRecentlyAdopted';
-import { revalidateTag } from 'next/cache';
 
 export default async function Masonry() {
   // we will render the images from getRecentlyAdopted
@@ -12,7 +11,6 @@ export default async function Masonry() {
     dog.galleryImages.map((img) => ({ img }))
   );
   console.log(adoptedDogs);
-  revalidateTag('adoptedDogs'); // Pass a string argument instead of a function
 
   return (
     <div className='mt-20  md:mt-40 py-24 px-4  max-w-6xl mx-auto'>

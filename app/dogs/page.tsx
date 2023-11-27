@@ -3,7 +3,6 @@ import React from 'react';
 import type { Animal } from '@/types';
 import { getDogs } from '@/sanity/queries/getDogs';
 import { AnimalCard } from '@/components/AnimalCard';
-import { revalidateTag } from 'next/cache';
 
 export default async function page() {
   const data = await getDogs();
