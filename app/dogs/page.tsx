@@ -7,7 +7,6 @@ import { revalidateTag } from 'next/cache';
 
 export default async function page() {
   const data = await getDogs();
-  revalidateTag('data'); // pass a string argument instead of a function
 
   return (
     <div className='mx-auto py-6 container flex flex-col items-center justify-center space-y-8'>
