@@ -15,8 +15,8 @@ const LeftSide = () => {
       </div>
       <div className='w-full px-4 md:w-1/2'>
         <h3 className='text-2xl text-center font-bold mb-4'>
-          TRACS is a non-profit organization that provides a safe haven for
-          homeless animals.
+          All Hearts Animal Resuce is a non-profit organization that provides a
+          safe haven for homeless animals.
         </h3>
         <p className='text-gray-700 px-4 text-center mb-4'>
           Find out more about us and how you can help.

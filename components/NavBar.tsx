@@ -12,7 +12,7 @@ const Navigation = () => {
   };
 
   return (
-    <div className=' flex sticky z-10 top-0 justify-between items-center mx-auto  text-black'>
+    <div className=' flex sticky z-20 top-0 justify-between items-center mx-auto  text-black'>
       <div className='flex-shrink-0 p-4 '>
         <Link href='/' aria-label='Home'>
           <svg

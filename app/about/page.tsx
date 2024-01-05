@@ -91,17 +91,17 @@ export default function page() {
                 </li>
               </ul>
               <a
-                href='#'
+                href='/contact'
                 className='px-4 py-2 text-gray-100 bg-blue-500 rounded-md dark:bg-blue-400 dark:hover:bg-blue-500 hover:bg-blue-600'
               >
-                Donate
+                Get in touch
               </a>
             </div>
             <div className='relative w-full px-4 mb-10 md:w-1/2 lg:mb-0'>
               <img
-                src='/mammoth.png'
+                src='/doggo.jpg'
                 alt=''
-                className='relative z-40 object-cover w-full rounded-md md:h-96 h-44'
+                className='relative z-10 object-cover w-full rounded-md md:h-96 h-44'
               />
               <div className='absolute top-0 right-0 items-center justify-center hidden -mt-16 lg:inline-flex'>
                 <svg
