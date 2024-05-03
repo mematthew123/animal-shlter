@@ -32,6 +32,7 @@ export type Animal = {
   goodWithKids: boolean;
   goodWithCats: any;
   goodWithDogs: any;
+  adoptionFee: number;
 };
 
 export type BlogPost = {

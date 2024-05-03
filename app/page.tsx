@@ -5,47 +5,35 @@ import SideBySide from '@/components/SideBySide';
 import ThreeItemGrid from '@/components/ThreeItemGrid';
 import { BoltIcon, GlobeAltIcon, StarIcon } from '@heroicons/react/24/outline';
 import Image from 'next/image';
+import { getHomePage } from '@/sanity/queries/getHomePage';
+import { PortableText } from '@portabletext/react';
+import { urlForImage } from '@/sanity/lib/image';
+import { get } from 'http';
 
 export const revalidate = 10;
 
-const features = [
-  {
-    name: ' Something about the shelter',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: GlobeAltIcon,
-  },
-  {
-    name: 'Something else about the shelter',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: StarIcon,
-  },
-  {
-    name: 'Something additional about the shelter',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: BoltIcon,
-  },
-];
-function Columns() {
+
+// we want to use the data from the sanity query to populate the page
+async function Columns() {
+  // get data from sanity
+  const data = await getHomePage();
+
+  
   return (
-    <div className='  bg-white my-16 py-20 sm:py-24 lg:py-32'>
-      <div className='mx-auto max-w-xl px-6 lg:max-w-7xl lg:px-8'>
-        <h2 className='sr-only'>Dogs and Cats for adoption</h2>
-        <dl className='grid grid-cols-1 gap-16 lg:grid lg:grid-cols-3'>
-          {features.map((feature) => (
-            <div key={feature.name}>
+    <div className='bg-white my-16 py-20 sm:py-24 lg:py-32'>
+      <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+        <h2 className='sr-only'>Feature Columns</h2>
+        <dl className='grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3'>
+          {data.featureColumns.map((column: any) => (
+            <div key={column.name} className='relative'>
               <dt>
-                <div className='flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-500 text-white'>
-                  <feature.icon className='h-8 w-8' aria-hidden='true' />
+                <div className='absolute flex items-center justify-center w-12 h-12 bg-indigo-500 rounded-md'>
+                  <BoltIcon className='w-6 h-6 text-white' />
                 </div>
-                <p className='mt-6 text-lg font-semibold leading-8 tracking-tight text-gray-900'>
-                  {feature.name}
-                </p>
+                <p className='ml-16 text-lg font-semibold text-gray-900'>{column.name}</p>
               </dt>
-              <dd className='mt-2 text-base leading-7 text-gray-600'>
-                {feature.description}
+              <dd className='mt-2 ml-16 text-base text-gray-600'>
+              {column.description}
               </dd>
             </div>
           ))}
@@ -53,9 +41,13 @@ function Columns() {
       </div>
     </div>
   );
-}
 
-export default function Home() {
+
+}
+export default async function Home() {
+
+const data = await getHomePage();
+
   return (
     <>
       <div className='relative isolate overflow-hidden bg-gradient-to-b from-indigo-100/20'>
@@ -66,14 +58,11 @@ export default function Home() {
         <div className='mx-auto max-w-7xl px-6 py-32 sm:py-40 '>
           <div className='mx-auto max-w-2xl lg:mx-0 lg:grid lg:max-w-none lg:grid-cols-2 lg:gap-x-16 lg:gap-y-6 xl:grid-cols-1 xl:grid-rows-1 xl:gap-x-8'>
             <h1 className='max-w-2xl text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl lg:col-span-2 xl:col-auto'>
-              All <span className='text-blue-600'>Hearts</span> Rescue
+             {data.heroSection.title}
             </h1>
             <div className='mt-6 z-0 max-w-2xl lg:mt-0 xl:col-end-1 xl:row-start-1'>
               <p className='text-lg leading-8 text-gray-600'>
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua. Anim aute id magna aliqua ad ad non deserunt
-                sunt. Qui irure qui lorem cupidatat commodo.
+                {data.heroSection.subtitle}
               </p>
               <div className='mt-10 flex items-center gap-x-6'>
                 <a
@@ -91,7 +80,7 @@ export default function Home() {
               </div>
             </div>
             <Image
-              src='/doggo.jpg'
+              src={urlForImage(data.heroSection.backgroundImage).url()}
               alt=''
               className='mt-10 aspect-[6/5] z-0 w-full max-w-lg rounded-2xl object-cover sm:mt-16 lg:mt-0 lg:max-w-none xl:row-span-2 xl:row-end-2 xl:mt-36'
               height={500}

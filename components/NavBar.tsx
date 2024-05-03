@@ -78,19 +78,27 @@ const Navigation = () => {
         </div>
         <ul className='mt-8 text-black space-y-4'>
           <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
-            <Link href='/dogs'>Dogs</Link>
+            <Link aria-label='dogs' href='/dogs'>
+              Dogs
+            </Link>
           </li>
           <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
-            <Link href='/cats'>Cats</Link>
+            <Link aria-label='cats' href='/cats'>
+              Cats
+            </Link>
           </li>
           <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
-            <Link href='/about'>About</Link>
+            <Link aria-label='About' href='/about'></Link>
           </li>
           <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
-            <Link href='/contact'>Contact</Link>
+            <Link aria-label='contact' href='/contact'>
+              Contact
+            </Link>
           </li>
           <li onClick={handleNav} className='p-4 text-4xl hover:text-gray-500'>
-            <Link href='/blog'>Blog</Link>
+            <Link aria-label='blog' href='/blog'>
+              Blog
+            </Link>
           </li>
         </ul>
       </div>

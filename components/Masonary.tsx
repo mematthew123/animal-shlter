@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { getRecentlyAdopted } from '@/sanity/queries/getRecentlyAdopted';
 
 export default async function Masonry() {
-  // we will render the images from getRecentlyAdopted
-
   const data = await getRecentlyAdopted();
   const adoptedDogs = data.flatMap((dog: { galleryImages: any[] }) =>
     dog.galleryImages.map((img) => ({ img }))
@@ -44,7 +42,7 @@ export default async function Masonry() {
               <Image
                 className='w-full h-full object-cover transform hover:scale-105 transition-transform duration-300'
                 src={dog.img}
-                alt={dog.alt}
+                alt={dog.alt || 'dog'}
                 height={500}
                 width={500}
               />

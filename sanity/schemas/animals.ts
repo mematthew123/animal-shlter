@@ -13,6 +13,7 @@ export default defineType({
         list: [
           { title: 'Cat', value: 'cat' },
           { title: 'Dog', value: 'dog' },
+          { title: 'Other', value: 'other'}
         ],
         layout: 'radio', // Display as radio buttons
       },
@@ -161,6 +162,21 @@ export default defineType({
       title: 'Adoption Fee',
       type: 'number',
       description: 'Adoption fee for the animal',
+    }),
+
+    defineField({
+      name: 'adoptionFeeWaived',
+      title: 'Adoption Fee Waived',
+      type: 'boolean',
+      description: 'Is the adoption fee waived?',
+    }),
+
+    defineField({
+      name:'otherType',
+      title: 'Other Type',
+      type: 'string',
+      description: 'Type of animal if other',
+      hidden: ({ parent }) => parent?.type !== 'other',
     }),
 
     defineField({

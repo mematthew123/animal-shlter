@@ -33,6 +33,7 @@ export async function singleDog(slug: any) {
       goodWithDogs,
       goodWithCats,
       goodWithKids,
+      adoptionFee,
 
     }`
   );

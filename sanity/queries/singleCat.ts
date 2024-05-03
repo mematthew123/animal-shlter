@@ -7,17 +7,30 @@ export async function singleCat(slug: any) {
       _id,
       name,
       type,
+      breed,
+      weight,
+      age,
       slug{
         current,
-        _type
+        _type,
+        
 
       },
       mainImage {
         alt,
         "image": asset->url
       },
+      images[]{
+        alt,
+        "image": asset->url
+      },
       body,
     catTemperament, 
+    specialNeeds,
+    goodWithKids,
+    goodWithDogs,
+    goodWithCats,
+    adoptionFee,
     }`
   );
 }
