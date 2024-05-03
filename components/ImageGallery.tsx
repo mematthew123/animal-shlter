@@ -25,10 +25,10 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
             className='relative group overflow-hidden rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer'
             onClick={() => handleImageClick(img.image)}
           >
-            <div className='w-auto md:w-64 h-64 relative'>
+            <div className='w-60 h-60 relative'>
               <img
                 key={index}
-                className='absolute top-0 left-0 w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-300'
+                className='absolute top-0 h-full w-full left-0 object-center transform group-hover:scale-105 transition-transform duration-300'
                 src={img.image}
                 alt='dog'
                 loading='lazy'
@@ -43,7 +43,7 @@ const ImageGallery: React.FC<ImageGalleryProps> = ({ images }) => {
           <img
             src={enlargedImage}
             alt='Enlarged dog image'
-            className='container mx-auto max-w-6xl'
+            className='container mx-auto object-contain h-80 md:h-96 '
             onClick={closeEnlargedImage}
           />
         </div>

@@ -26,13 +26,15 @@ export default async function Page({ params }: { params: any }) {
       <div className='flex justify-center w-full max-w-6xl space-y-6'>
         {data.map((dog: Animal) => (
           <div key={dog._id} className='space-y-6'>
+            <div className='flex justify-center h-96 w-96 container mx-auto'>
             <Image
               src={dog.mainImage?.image}
               alt={dog.name}
               width={500}
               height={500}
-              className='rounded-lg shadow-lg w-full  object-contain cursor-pointer'
+              className='rounded-lg shadow-lg   object-cover cursor-pointer'
             />
+            </div>
             <Separator />
             <ImageGallery images={dog.images} />
           </div>
